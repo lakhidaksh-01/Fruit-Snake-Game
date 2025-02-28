@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'New Tegomin', serif;
+}
+    body{
+    background: url("bg.jpg"); 
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .header-container {
+  position: fixed; /* Ensures the header stays at the top on scroll */
+  width: 25%; /* Makes the header span across the viewport */
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(90deg, #00490a, #00642a); /* Greenish professional gradient */
+  color: white;
+  border-bottom: 5px solid #145a32; /* A darker green for a professional contrast */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Keeps it above other content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Slightly darker shadow for more depth */
+}
+.name-link {
+  color: #ffe372; /* Highlight color for the link */
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.name-link:hover {
+  text-decoration: underline;
+}
+.main-heading {
+  font-size: 2rem;
+  margin: 0;
+  color: #f8f9f9; /* Light shade for better readability */
+}
+
+.sub-heading {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+  font-style: italic;
+  color: #d5f5e3; /* Subtle greenish tint for harmony with the header */
+}
+    .wrapper{
+        width:80vmin;
+        height: 85vmin;
+        background-color: #005906; /* Dark green for the playboard */
+        border-radius: 5px;
+        display:flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .game-details{
+        color:aliceblue;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    .play-board{
+        width: 100%;
+        height: 100%;
+        background-color: #002b12; /* Dark green for the playboard */
+        display: grid;
+        grid-template:repeat(25,1fr)/repeat(25,1fr);
+    }
+    
+    .play-board .food {
+        background: linear-gradient(red,rgb(164, 0, 0), purple);
+    border-radius: 20%;
+}
+
+/* Snake head with a different color */
+.play-board .head {
+    background: linear-gradient(45deg, #006e04, #009b08); /* Green gradient for body */
+    border-radius: 20%;
+}
+
+/* Snake body with a different color */
+.play-board .body {
+    background: linear-gradient(45deg, #4caf50, #3cb042); /* Green gradient for body */
+    border-radius: 20%;
+}
+    .controls{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .controls i{
+        padding: 25px 0px;
+        color: aliceblue;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1.3rem;
+        width: calc(25% - 10px);
+    margin: 5px;
+    padding: 0.8rem;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    }
+    .controls i:hover {
+    background: #2e7d32; /* Brighter green on hover */
+    transform: scale(1.1);
+}
+@media (max-width: 1000px) {
+    .wrapper{
+        width:95vmin;
+        height: 100vmin;
+    }
+    .header-container{
+        width: 100%;
+    }
+    body {
+  padding-top: 80px; /* Prevents content from overlapping the fixed header */
+    }
+}
